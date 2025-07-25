@@ -1,0 +1,41 @@
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+private boolean validateinfo(String name, String contact) {
+        if (name.length() == 0) {
+            edname.requestFocus();
+            edname.setError("Field Cannot Be Empty");
+            return false;
+        } else if (!name.matches("[a-zA-Z]+")) {
+            edname.requestFocus();
+            edname.setError("Enter only Alphabetical Character");
+            return false;
+
+        } else if (contact.length() == 0) {
+            edcontact.requestFocus();
+            edcontact.setError("Field Cannot be Empty");
+            return false;
+
+        } else if (!contact.matches("^[+][0-9]{10,13}$")) {
+            edcontact.requestFocus();
+            edcontact.setError("Correct Format: +91xxxxxxxxxx");
+            return false;
+        } else {
+            return true;
+        }
+    }
